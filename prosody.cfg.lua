@@ -61,4 +61,6 @@ VirtualHost "<HOSTNAME>"
 
 -- Файлообменник (чтобы можно было отправлять файлы)
 Component "u.<HOSTNAME>" "http_file_share"
-    http_file_share_size_limit = 128*1024*1024
+    http_file_share_expires_after = 86400 -- 1 day
+    http_file_share_global_quota = 2*1024*1024*1024 -- 2 GiB
+    http_file_share_size_limit = 128*1024*1024 -- 128 MiB
