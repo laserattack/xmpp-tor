@@ -2,6 +2,6 @@ tor_data/
 prosody_data/
 prosody_certs/
 prosody_tor_service/
-
+digest.txt
 .git/
 .gitignore
