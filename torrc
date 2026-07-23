@@ -1,0 +1,8 @@
+Log notice file /var/log/tor/notices.log
+User tor
+DataDirectory /var/lib/tor
+
+HiddenServiceDir /var/lib/tor/prosody/
+HiddenServicePort 5222 127.0.0.1:5222
+HiddenServicePort 5269 127.0.0.1:5269
+HiddenServicePort 5281 127.0.0.1:5281

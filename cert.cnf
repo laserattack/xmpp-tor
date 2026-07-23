@@ -1,0 +1,20 @@
+[req]
+default_bits = 4096
+distinguished_name = req_distinguished_name
+req_extensions = req_ext
+prompt = no
+
+[req_distinguished_name]
+commonName             = <HOSTNAME>
+countryName            = US
+localityName           = The XMPP
+organizationName       = The XMPP
+organizationalUnitName = The XMPP
+emailAddress           = xmpp@<HOSTNAME>
+
+[req_ext]
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1 = <HOSTNAME>
+DNS.2 = u.<HOSTNAME>
