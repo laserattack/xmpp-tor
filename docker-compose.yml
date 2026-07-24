@@ -10,6 +10,4 @@ services:
       - ./prosody_tor_service:/var/lib/tor/prosody
       - ./prosody_data:/var/lib/prosody
       - ./prosody_certs:/etc/prosody/certs/host
-    ports:
-      - "127.0.0.1:5222:5222"
     restart: unless-stopped
