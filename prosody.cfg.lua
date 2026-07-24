@@ -59,6 +59,8 @@ VirtualHost "<HOSTNAME>"
         { "u.<HOSTNAME>", "file sharing service" };
     }
 
+    caps_compat = true
+
 -- Файлообменник (чтобы можно было отправлять файлы)
 Component "u.<HOSTNAME>" "http_file_share"
     http_file_share_expires_after = 86400 -- 1 day
