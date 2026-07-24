@@ -1,4 +1,4 @@
-    -- Основные настройки
+-- Основные настройки
 pidfile = "/var/run/prosody/prosody.pid"
 authentication = "internal_hashed"
 
@@ -37,6 +37,7 @@ modules_enabled = {
     "smacks";
     "csi_simple";
     "http_file_share";
+    "http_files";
 }
 
 -- SSL/TLS
@@ -46,6 +47,9 @@ s2s_require_encryption = true
 -- Сертификаты (автоматически подставится onion-адрес)
 https_certificate = "/etc/prosody/certs/host/<HOSTNAME>.crt"
 https_key = "/etc/prosody/certs/host/<HOSTNAME>.key"
+
+-- Директория для файлов которые кто угодно может скачать
+http_files_dir = "/etc/prosody/public"
 
 -- Виртуальный хост
 VirtualHost "<HOSTNAME>"

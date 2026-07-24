@@ -10,4 +10,5 @@ services:
       - ./prosody_tor_service:/var/lib/tor/prosody
       - ./prosody_data:/var/lib/prosody
       - ./prosody_certs:/etc/prosody/certs/host
+      - ./prosody_public:/etc/prosody/public
     restart: unless-stopped

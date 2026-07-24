@@ -8,6 +8,7 @@ TOR_SERVICE_DIR=$TOR_DIR/prosody
 CERT_DIR=/etc/prosody/certs
 CERT_HOST_DIR=$CERT_DIR/host
 PROSODY_DATA_DIR=/var/lib/prosody
+HTTP_FILES_DIR=/etc/prosody/public
 
 chmod 700 "$TOR_DIR" "$PROSODY_TOR_DIR"
 chown -R tor:root "$TOR_DIR" "$PROSODY_TOR_DIR"
@@ -42,7 +43,10 @@ if [ ! -f "$CERT_HOST_DIR/$hostname.crt" ]; then
         -extensions req_ext
 fi
 
+cp "$CERT_HOST_DIR/$hostname.crt" /etc/prosody/public/
+
 chown -R prosody:prosody "$CERT_HOST_DIR"
+chown -R prosody:prosody "$HTTP_FILES_DIR"
 
 awk -v hostname="$hostname" '{gsub(/<HOSTNAME>/, hostname); print}' /etc/prosody/prosody.cfg.lua.orig > /etc/prosody/prosody.cfg.lua
 
