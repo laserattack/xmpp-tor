@@ -1,10 +1,9 @@
--- Основные настройки
+    -- Основные настройки
 pidfile = "/var/run/prosody/prosody.pid"
 authentication = "internal_hashed"
 
 -- Регистрация (открытая, потом отключите, когда создадите всех)
 allow_registration = false
-registration_invite_only = true
 
 -- Слушаем все интерфейсы внутри контейнера
 interfaces = { "0.0.0.0" }
@@ -38,8 +37,6 @@ modules_enabled = {
     "smacks";
     "csi_simple";
     "http_file_share";
-    "invites";
-    "invites_register";
 }
 
 -- SSL/TLS
@@ -60,8 +57,6 @@ VirtualHost "<HOSTNAME>"
     disco_items = {
         { "u.<HOSTNAME>", "file sharing service" };
     }
-
-    invites_page = "https://{host}:5281/invites_page?{invite.token}"
 
     caps_compat = true
 
